@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/layout_bottom_margin">
+
+    <ImageView
+        android:id="@+id/galleryImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/jaffa_old_city_door"/>
+
+    <ImageView
+        android:id="@+id/likedIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_alignParentEnd="true"
+        tools:src="@drawable/liked"/>
+
+    <ImageView
+        android:id="@+id/savedIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginTop="@dimen/layout_margin"
+        tools:src="@drawable/saved"/>
+
+    <TextView
+        android:id="@+id/likedCounterTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/likedIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_toStartOf="@id/likedIcon"
+        android:textColor="@android:color/white"
+        android:fontFamily="sans-serif"
+        tools:text="100"/>
+
+    <TextView
+        android:id="@+id/categoryTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/galleryImage"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_below="@id/galleryImage"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/category_text_size"
+        android:fontFamily="sans-serif"
+        tools:text="DESIGN"/>
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/categoryTv"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginEnd="@dimen/layout_margin"
+        android:layout_below="@id/categoryTv"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/title_text_size"
+        android:fontFamily="sans-serif-medium"
+        tools:text="An interview with taylor swift about her new album"/>
+
+    <TextView
+        android:id="@+id/authorTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_alignTop="@id/avatar"
+        android:layout_toEndOf="@id/avatar"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/author_text_size"
+        android:fontFamily="sans-serif"
+        tools:text="Taylor swift"/>
+
+    <TextView
+        android:id="@+id/createdTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        android:layout_alignBottom="@id/avatar"
+        android:layout_toEndOf="@id/avatar"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/created_text_size"
+        android:fontFamily="sans-serif"
+        tools:text="18 May, 2020"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/avatar_width"
+        android:layout_height="@dimen/avatar_height"
+        android:layout_marginTop="@dimen/layout_margin"
+        android:layout_marginStart="@dimen/layout_margin"
+        android:layout_marginEnd="@dimen/layout_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        android:layout_below="@id/titleTv"
+        tools:src="@mipmap/ic_launcher"/>
+
+</RelativeLayout>

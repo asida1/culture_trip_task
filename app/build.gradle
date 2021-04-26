@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply from: 'versions.gradle'
+
+android {
+    compileSdkVersion COMPILE_SDK_VERSION
+    defaultConfig {
+        applicationId "com.example.asi.imagegallery"
+
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
+    implementation "androidx.core:core-ktx:$CORE_KTX_VERSION"
+    implementation "androidx.constraintlayout:constraintlayout:$CONSTRAINT_LAYOUT_VERSION"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+    implementation "com.squareup.retrofit2:converter-gson:$RETROFIT_VERSION"
+
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:$RECYCLERVIEW_VERSION"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$GLIDE_VERSION"
+
+    //KTX
+    implementation "androidx.fragment:fragment-ktx:$FRAGMENT_KTX_VERSION"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$KTX_VERSION"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$KTX_VERSION"
+
+    // CircleImageView
+    implementation "de.hdodenhof:circleimageview:$CIRCLE_IMAGE_VIEW_VERSION"
+}
